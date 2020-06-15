@@ -1,0 +1,23 @@
+<div id=app>
+    <div class=container>
+        <div class=row>
+            <div class=col-lg>
+                <google-map>
+                    <google-map-marker v-if="posts"
+                                       v-bind:posts="posts"
+                                       v-bind:username="username">
+                    </google-map-marker>
+                </google-map>
+                <br>
+                <request-modal v-bind:host="host" v-if="host"></request-modal>
+                <br>
+                <post-table v-bind:posts="posts">
+                    <edit-modal v-bind:username="username"
+                                v-bind:host="host">
+                    </edit-modal>
+                </post-table>
+            </div>
+        </div>
+    </div>
+
+</div>

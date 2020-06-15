@@ -1,0 +1,83 @@
+<script type="text/x-template" id="request-modal">
+    <div>
+        <div>
+            <button type="button" class="btn btn-success dropdown-item someFixedWidths" data-toggle="modal" data-target="#addPostModal">Post a New Request</button>
+        </div>
+
+        <div class="modal fade" id="addPostModal" tabindex="-1" role="dialog" aria-labelledby="addPostModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addPostModalLabel">New Post</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    
+                        
+                        <form @submit="onSubmit">
+                            <div class="form-group">
+                                <label for="addPostName">Name</label>
+                                <input v-model="addPostForm.name" type="text" class="form-control" id="addPostName" placeholder="Name">
+                            </div>
+                            <!-- Email will come from SAML not the user -->
+                            <!-- <div class="form-group">
+                                <label for="addPostEmail1">Email address</label>
+                                <input v-model="addPostForm.email" type="email" class="form-control" id="addPostEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div> -->
+                            <div class="form-group">
+                                <label for="addPostAddress">Address</label>
+                                <input v-model="addPostForm.address" type="address" class="form-control" id="addPostAddress" placeholder="address">
+                                <small id="emailHelp" class="form-text text-muted">Remember to increase safety, don't use the street number in your address.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="addPostPost">Post</label>
+                                <input v-model="addPostForm.post" type="text" class="form-control" id="addPostPost" placeholder="Out of supplies in my area">
+                                </div>
+                            
+                            <div class="form-group">
+                                <label for="">How can we connect you?</label>
+                                <div class="form-check">
+                                    <input v-model="addPostForm.requestType" class="form-check-input" type="radio" name="addPostService" id="addPostTransportation" value="transportation" checked>
+                                    <label class="form-check-label" for="addPostTransportation">
+                                    Transportation
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input v-model="addPostForm.requestType" class="form-check-input" type="radio" name="addPostService" id="addPostShopping" value="neighborhood-connection">
+                                    <label class="form-check-label" for="addPostShopping">
+                                    Neighborhood Connection
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input v-model="addPostForm.requestType" class="form-check-input" type="radio" name="addPostService" id="addPostInHouseHelp" value="family-connection">
+                                    <label class="form-check-label" for="addPostInHouseHelp">
+                                    Family Connection
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input v-model="addPostForm.requestType" class="form-check-input" type="radio" name="addPostService" id="addPostPetCare" value="pet-care">
+                                    <label class="form-check-label" for="addPostPetCare">
+                                    Pet Sitting\Care
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <hr>
+                            <div class="alert alert-success" role="alert">
+                                <strong>Please hit refresh to see your pin show up</strong>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

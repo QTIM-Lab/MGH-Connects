@@ -1,0 +1,91 @@
+{% extends "bootstrap/base.html" %}
+{% set application_name = 'Mass General Brigham Community Connects' %}
+
+{% block head %}
+  
+  <title>{{ application_name }}</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163335746-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163335746-1');
+  </script> -->
+
+  {% block metas %}<meta name="viewport" content="width=device-width, initial-scale=1.0">{% endblock metas %}
+
+  {% block styles %}
+  {{ super() }}
+  <!-- Optional theme -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous"> -->
+  <!-- <link rel="icon" href="../static/img/mgh-icon.ico"> -->
+  <link rel="stylesheet" href="../static/styles.css">
+  {% endblock styles %}
+{% endblock head %}
+
+{% block body_attribs %} style="padding-top: 60px"{% endblock %}
+{% block navbar %}        
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand notmobile" href="{{ url_for('main_page') }}">{{ application_name }}</a>
+          <a class="navbar-brand showInMobile" href="{{ url_for('main_page') }}">{{ application_name }}</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+      {% if current_user.is_authenticated %}
+          
+          <li><a href="{{ url_for('disclaimer') }}">Disclaimer</a></li>
+          <li><a href="https://partnershealthcarehr.service-now.com/hrportal?id=ph_kb_article&sys_id=c113fa84db2bc0d02c243ebd7c961953&kb_category=2f1ef3a8dbd00340da8538ff9d96191d#child" target="_blank">Link To Child Care Resources</a></li>
+          <li><a href="{{ url_for('logout') }}">Logout</a></li>      
+      {% else %}
+          {% for idp in idp_dict.keys() %}
+          <li><a href="/saml/login/{{idp}}">Login</a></li>
+          {% endfor %}     
+          <!-- <li><a href="../static/New_Resources.pdf">Link To Child Care Resources</a></li> -->
+          <!-- <li><a href="https://www.partners.org/For-Employees/Childcare/Parents-in-a-Pinch.aspx">Link To Child Care Resources</a></li> -->
+      {% endif %}
+          </ul>
+          <span class="navbar-text" style="float:right;"><a style="color:white;" href="{{ url_for('tutorial') }}">Tutorial</a></span>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+{% endblock %}
+<!-- Main Content -->
+{% block content %}
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+    <!-- Custom js -->
+    <!-- Google Maps -->
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOpBMTlp7i5AvJYUbS9b7FYfnQCJi7k64&callback=initMap"></script> -->
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOpBMTlp7i5AvJYUbS9b7FYfnQCJi7k64"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOpBMTlp7i5AvJYUbS9b7FYfnQCJi7k64"></script>
+    <!-- Vuejs: development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- AJAX Calls from below -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+    <!-- New App -->
+    <script src="../static/new_app/request.js"></script>
+    <script src="../static/new_app/edit.js"></script>
+    <script src="../static/new_app/map.js"></script>
+    <script src="../static/new_app/marker.js"></script>
+    <script src="../static/new_app/table.js"></script>
+    <script src="../static/new_app/app.js"></script>
+    <!-- Old App -->
+    <!-- <script src="../static/javascript.js"></script> -->
+
+
+{% endblock scripts%}

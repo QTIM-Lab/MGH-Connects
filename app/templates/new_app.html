@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+
+{% include 'new_app/request.html' %}
+{% include 'new_app/edit.html' %}
+{% include 'new_app/table.html' %}
+{% include 'new_app/map.html' %}
+{% include 'new_app/app.html' %}
+
+{% else %}
+  <br><br><br>
+  <div class=col-sm-1></div>
+  <div class=col-sm-10>
+    <div class="hero-unit">
+      <h1>Mass General Brigham Community Connects</h1>
+      <hr>
+      <h2>Purpose:</h2>
+      <p class="greeting">Mass General Brigham Community Connects connect colleagues who live in the same neighborhood during this extraordinary time. Whether you would like to find colleagues to carpool to work, go dog walking together or are looking for colleagues in your neighborhood to connect, please read on!</p>  
+      <h2>Overview</h2>
+      <p class="greeting">To get started, simply click the Login button below. You will automatically be logged in via single sign on.</p>
+      <p class="greeting"><strong>Please click:</strong> "Post a New Request" for one of the following types of connections:</p>
+      <ol>
+        <li class="greeting">Transportation (rides to work, carpooling)</li>
+        <li class="greeting">Family Connections</li>
+        <li class="greeting">Dog Walking, Pet-Sitting</li>
+        <li class="greeting">Neighborhood connections</li>
+      </ol>
+      <h2>Please Read</h2>
+      <p class="greeting">Mass General Brigham is making this site available to employees, but it is not actively monitoring the requests and responses posted. By using this service, you assume all risk and responsibility. Mass General Brigham is not responsible for the conduct of individuals that choose to participate and receive and/or offer services through Mass General Brigham Community Connections. However, if you post inappropriate or illegal requests for services or otherwise communicate in a manner inconsistent with Mass General Brigham and our organizations standards of professionalism and civility, you may be referred to Human Resources for appropriate action.</p>
+      <h2>Disclaimer:</h2>
+      <div class="alert alert-warning greeting" role="alert">
+        <strong>To effectively connect employee, this tool requires the user to identify their location by including street of residence. It does not request you disclose your house or apartment number for privacy reasons. By establishing an account you are acknowledging your agreement to share your street location to other members of the Mass General Brigham community using this tool.</strong>
+      </div>
+      <hr>
+      <p>
+        {% for idp in idp_dict.keys() %}
+        <a class="btn btn-primary btn-large" href="/saml/login/{{idp}}">Login</a>
+        {% endfor %}  
+      </p>
+    </div>
+  </div>
+  <div class=col-sm-1></div>
+  
+
+
+{% endif %}
+{% endblock %}

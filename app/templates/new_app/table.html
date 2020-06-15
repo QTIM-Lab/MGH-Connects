@@ -1,0 +1,123 @@
+<script type="text/x-template" id="post-table">
+    <div>
+        <slot></slot> <!-- This slot is where element edit-modal goes -->
+        <table id="table" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+            <thead>
+                <col width="150">
+                <col width="100">
+                <col width="100">
+                <col width="200">
+                <col width="150">
+                <col width="300">
+                <col width="150">
+            <tr>
+                <th @click="sort('date')" class="th-sm notmobile" style="inline-block">Date
+                    <div class=inline> <!-- These are the arrows -->
+                        <div class="arrow-up"></div>
+                        <div class=spacer></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </th>
+                <th @click="sort('name')" class="th-sm notmobile" style="inline-block">Name
+                    <div class=inline> <!-- These are the arrows -->
+                        <div class="arrow-up"></div>
+                        <div class=spacer></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </th>
+                <th @click="sort('partnersID')" class="th-sm headerSortUp notmobile">PartnersID
+                    <div class=inline>
+                        <div class="arrow-up"></div>
+                        <div class=spacer></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </th>
+                <th @click="sort('email')" class="th-sm headerSortUp">Email
+                    <div class=inline>
+                        <div class="arrow-up"></div>
+                        <div class=spacer></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </th>  
+                <th @click="sort('address')" class="th-sm">Address
+                    <div class=inline>
+                        <div class="arrow-up"></div>
+                        <div class=spacer></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </th>
+                <th @click="sort('post')" class="th-sm">Post
+                    <div class=inline>
+                        <div class="arrow-up"></div>
+                        <div class=spacer></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </th>
+                <th @click="sort('requestType')" class="th-sm notmobile">Request Type
+                    <div class=inline>
+                        <div class="arrow-up"></div>
+                        <div class=spacer></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </th>
+                <th class="th-sm">Edit</th>
+                <!-- <th class="th-sm">Delete Post</th> -->
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr v-for="(post, index) in sortedPosts" :key="index">
+            <!-- <tr v-for="(post, index) in posts" :key="index"></tr> Non reactive table-->
+                <td class=notmobile>{% raw %} {{ post['date'] }} {% endraw %}</td>    
+                <td class=notmobile>{% raw %} {{ post['name'] }} {% endraw %}</td>
+                <td class=notmobile>{% raw %} {{ post['partnersID'] }} {% endraw %}</td>
+                <td>{% raw %} {{ post['email'] }} {% endraw %}</td>
+                <td>{% raw %} {{ post['address'] }} {% endraw %}</td>
+                <td>{% raw %} {{ post['post'] }} {% endraw %}</td>
+                
+                <!-- requestType -->
+                <td class=notmobile>
+                    {% raw %} {{ post['requestType'] == 'neighborhood-connection' ? 'House Help':'' }} {% endraw %}
+                    {% raw %} {{ post['requestType'] == 'transportation' ? 'Transportation':'' }} {% endraw %}
+                    {% raw %} {{ post['requestType'] == 'pet-care' ? 'Pet Care':'' }} {% endraw %}
+                    {% raw %} {{ post['requestType'] == 'family-connection' ? 'Family Connection':'' }} {% endraw %}
+                </td>
+                <!-- requestType -->
+                <td>
+                    <button type="button" 
+                            class="btn btn-primary btn-xs dropdown-item" 
+                            data-toggle="modal" 
+                            data-target="#editPostModal"
+                            @click="editPost(post)">
+                            Edit
+                    </button>
+                </td>
+                <!-- <td>
+                    <button type="button" 
+                            class="btn btn-danger dropdown-item" 
+                            data-toggle="modal" 
+                            data-target="#deleteModal"
+                            @click="onDeleteRequest(post)">
+                            Delete
+                    </button>
+                </td> -->
+
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th class="th-sm notmobile">Date</th>
+                <th class="th-sm notmobile">Name</th>
+                <th class="th-sm notmobile">PartnersID</th>
+                <th class="th-sm">Email</th>
+                <th class="th-sm">Address</th>
+                <th class="th-sm">Post</th>
+                <th class="th-sm notmobile">Request Type</th>
+                <th class="th-sm">Edit</th>
+                <!-- <th class="th-sm">Delete Post</th> -->
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</script>
