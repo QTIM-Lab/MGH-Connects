@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
         var vm = this;
         vm.$eventBus.$on('send-bounds-to-table', ({sw, ne}) => {
           if(vm.posts === null){ // wait on posts to load
-            setTimeout(() => {this.refresh_table({sw,ne})}, 50)
+            setTimeout(() => {this.refresh_table({sw,ne})}, 500)
           }else{
             this.refresh_table({sw,ne})
           };
