@@ -25,13 +25,13 @@
                         <div class="arrow-down"></div>
                     </div>
                 </th>
-                <th @click="sort('partnersID')" class="th-sm headerSortUp notmobile">PartnersID
+                <!-- <th @click="sort('partnersID')" class="th-sm headerSortUp notmobile">PartnersID
                     <div class=inline>
                         <div class="arrow-up"></div>
                         <div class=spacer></div>
                         <div class="arrow-down"></div>
                     </div>
-                </th>
+                </th> -->
                 <th @click="sort('email')" class="th-sm headerSortUp">Email
                     <div class=inline>
                         <div class="arrow-up"></div>
@@ -70,7 +70,7 @@
             <!-- <tr v-for="(post, index) in posts" :key="index"></tr> Non reactive table-->
                 <td class=notmobile>{% raw %} {{ post['date'] }} {% endraw %}</td>    
                 <td class=notmobile>{% raw %} {{ post['name'] }} {% endraw %}</td>
-                <td class=notmobile>{% raw %} {{ post['partnersID'] }} {% endraw %}</td>
+                <!-- <td class=notmobile>{% raw %} {{ post['partnersID'] }} {% endraw %}</td> -->
                 <td>{% raw %} {{ post['email'] }} {% endraw %}</td>
                 <td>{% raw %} {{ post['address'] }} {% endraw %}</td>
                 <td>{% raw %} {{ post['post'] }} {% endraw %}</td>
@@ -108,7 +108,7 @@
             <tr>
                 <th class="th-sm notmobile">Date</th>
                 <th class="th-sm notmobile">Name</th>
-                <th class="th-sm notmobile">PartnersID</th>
+                <!-- <th class="th-sm notmobile">PartnersID</th> -->
                 <th class="th-sm">Email</th>
                 <th class="th-sm">Address</th>
                 <th class="th-sm">Post</th>

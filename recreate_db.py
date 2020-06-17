@@ -12,13 +12,13 @@ def recreate_db():
     db.drop_all()
     db.create_all()
     
-    user1 = User(id=1, name='Ben Bearce', partnersID='bbearce', email='bbearce@gmail.com')
-    user2 = User(id=2, name='Cloud Bearce', partnersID='bbearce@bu.edu', email='bbearce@bu.edu')
-    user3 = User(id=3, name='Miriam Bredella', partnersID='MBREDELLA@mgh.harvard.edu', email='MBREDELLA@mgh.harvard.edu')
+    user1 = User(id=1, name='Test User 1', partnersID='bbearce', email='bbearce@gmail.com')
+    user2 = User(id=2, name='Test User 2', partnersID='bbearce@bu.edu', email='bbearce@bu.edu')
+    user3 = User(id=3, name='Test User 3', partnersID='test123', email='test@test.com')
     
     # Transportation
     post1 = Post(userId=user1.id, 
-                 post="I am looking for someone to carpool to MGH. My shift starts at 7 am and I am leaving around 4 pm.", 
+                 post="(test) I am looking for someone to carpool to MGH. My shift starts at 7 am and I am leaving around 4 pm.", 
                  requestType='transportation', 
                 #  helpType="needHelp", 
                  status='un-resolved',
@@ -29,7 +29,7 @@ def recreate_db():
                  )
     
     post2 = Post(userId=user3.id, 
-                 post="Could someone give me a ride to the Navy yard in the morning? My times are flexible.", 
+                 post="(test) Could someone give me a ride to the Navy yard in the morning? My times are flexible.", 
                  requestType='transportation', 
                 #  helpType="needHelp", 
                  status='un-resolved',
@@ -39,7 +39,7 @@ def recreate_db():
                  lng=-71.0589)
     # Family connections
     post3 = Post(userId=user3.id, 
-                 post="Anyone with a toddler who would like to get together?", 
+                 post="(test) Anyone with a toddler who would like to get together?", 
                  requestType='family-connection', 
                 #  helpType="canHelp", 
                  status='un-resolved',
@@ -49,7 +49,7 @@ def recreate_db():
                  lng=-71.1626756)
     
     post4 = Post(userId=user3.id, 
-                 post="Would anyone like to get together and do outside activities? I have an 8 year-old son.", 
+                 post="(test) Would anyone like to get together and do outside activities? I have an 8 year-old son.", 
                  requestType='family-connection', 
                 #  helpType="needHelp", 
                  status='un-resolved',
@@ -59,7 +59,7 @@ def recreate_db():
                  lng=-71.1002881)
     
     post5 = Post(userId=user2.id, 
-                 post="Any ideas for summer camps?", 
+                 post="(test) Any ideas for summer camps?", 
                  requestType='family-connection', 
                 #  helpType="canHelp", 
                  status='un-resolved',
@@ -69,7 +69,7 @@ def recreate_db():
                  lng=	-71.1828321)
     # Neighborhood Connections
     post6 = Post(userId=user3.id, 
-                 post="I am trying to find out what is open in our neighborhood? Any info?", 
+                 post="(test) I am trying to find out what is open in our neighborhood? Any info?", 
                  requestType='neighborhood-connection', 
                 #  helpType="canHelp", 
                  status='un-resolved',
@@ -79,7 +79,7 @@ def recreate_db():
                  lng=-71.3031132)
     
     post7 = Post(userId=user3.id, 
-                 post="What can we do in our neighborhood during the summer?", 
+                 post="(test) What can we do in our neighborhood during the summer?", 
                  requestType='neighborhood-connection', 
                 #  helpType="canHelp", 
                  status='un-resolved',
@@ -92,7 +92,7 @@ def recreate_db():
 
     
     post8 = Post(userId=user3.id, 
-                 post="Would anyone like to get together to walk our dogs?", 
+                 post="(test) Would anyone like to get together to walk our dogs?", 
                  requestType='pet-care', 
                 #  helpType="needHelp", 
                  status='un-resolved',
@@ -102,7 +102,7 @@ def recreate_db():
                  lng=-71.1061639)
     
     post9 = Post(userId=user3.id, 
-                 post="Happy to watch someone’s cat. If you have a vacation coming up or need to be away for a couple days, I would be willing to care for your little one.", 
+                 post="(test) Happy to watch someone’s cat. If you have a vacation coming up or need to be away for a couple days, I would be willing to care for your little one.", 
                  requestType='pet-care', 
                 #  helpType="needHelp", 
                  status='un-resolved',
