@@ -54,7 +54,7 @@ window.addEventListener('load', () => {
           const contentString = `
           <h5><strong>Name:</strong> ${post.name}</h5>
           <hr>
-          <p><strong>Contact Email:</strong> ${vm.username}</p>
+          <p><strong>Contact Email:</strong> ${post.email}</p>
           <br>
           <p><strong>Post:</strong></p>
           <p>${post.post}</p>

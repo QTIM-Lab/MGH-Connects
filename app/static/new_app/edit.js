@@ -83,8 +83,8 @@ window.addEventListener('load', () => {
                 });
               },
               updateRequest(payload, requestID) {
-                debugger;
-                const path = `http://${this.host}/posts/${requestID}`;
+                // debugger;
+                const path = `https://${this.host}/posts/${requestID}`;
                 axios.put(path, payload)
                   .then(() => {
                     setTimeout(()=>{location.reload()}, 1000);

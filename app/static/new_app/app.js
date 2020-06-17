@@ -62,7 +62,7 @@ new Vue({
     },
     methods: {
       getRequests: function() {
-        const path = `http://${this.host}/posts`;
+        const path = `https://${this.host}/posts`;
         axios.get(path)
         .then((res) => {
           // debugger;

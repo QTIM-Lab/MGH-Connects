@@ -255,6 +255,7 @@ def ping():
 
 @app.route('/posts', methods=['GET', 'POST'])
 def all_requests(app=app, User=User, Post=Post):
+    # pdb.set_trace()
     # response_object = {'status': 'success'}
     try:
         response_object = {'status': 'success', 
@@ -278,11 +279,13 @@ def all_requests(app=app, User=User, Post=Post):
             db.session.add(user)
         else:
             # If not then make a new user
+            # pdb.set_trace()
             new_user = User(
                 name=post_data.get('name'), 
                 partnersID=session['user'], 
                 # email=post_data.get('email'), # User defined
-                email=session['saml_attributes']['email'][0], # SAML defined
+                # email=session['saml_attributes']['email'][0], # SAML defined (Partners)
+                email=session['saml_attributes']['Email'][0], # SAML defined (Personal)
                 
             )
             db.session.add(new_user)

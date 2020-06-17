@@ -62,7 +62,7 @@ window.addEventListener('load', () => {
           },
           addRequest(payload) { // actually posts data to db
             // debugger;
-            const path = `http://${this.host}/posts`;
+            const path = `https://${this.host}/posts`;
             axios.post(path, payload)
               .then((res) => {
                 setTimeout(()=>{location.reload()}, 1000);

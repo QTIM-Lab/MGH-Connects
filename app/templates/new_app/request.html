@@ -42,13 +42,7 @@
                                 <div class="form-check">
                                     <input v-model="addPostForm.requestType" class="form-check-input" type="radio" name="addPostService" id="addPostTransportation" value="transportation" checked>
                                     <label class="form-check-label" for="addPostTransportation">
-                                    Transportation
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input v-model="addPostForm.requestType" class="form-check-input" type="radio" name="addPostService" id="addPostShopping" value="neighborhood-connection">
-                                    <label class="form-check-label" for="addPostShopping">
-                                    Neighborhood Connection
+                                    Transportation (rides to work, carpooling)
                                     </label>
                                 </div>
                                 <div class="form-check">
@@ -58,19 +52,20 @@
                                     </label>
                                 </div>
                                 <div class="form-check">
+                                    <input v-model="addPostForm.requestType" class="form-check-input" type="radio" name="addPostService" id="addPostShopping" value="neighborhood-connection">
+                                    <label class="form-check-label" for="addPostShopping">
+                                    Neighborhood Connection
+                                    </label>
+                                </div>
+                                <div class="form-check">
                                     <input v-model="addPostForm.requestType" class="form-check-input" type="radio" name="addPostService" id="addPostPetCare" value="pet-care">
                                     <label class="form-check-label" for="addPostPetCare">
-                                    Pet Sitting\Care
+                                    Dog Walking\ Pet Sitting
                                     </label>
                                 </div>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <hr>
-                            <div class="alert alert-success" role="alert">
-                                <strong>Please hit refresh to see your pin show up</strong>
-                            </div>
-
                         </form>
                     </div>
                     <div class="modal-footer">
