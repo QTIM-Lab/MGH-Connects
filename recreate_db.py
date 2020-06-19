@@ -12,9 +12,9 @@ def recreate_db():
     db.drop_all()
     db.create_all()
     
-    user1 = User(id=1, name='Test User 1', partnersID='bbearce', email='bbearce@gmail.com')
-    user2 = User(id=2, name='Test User 2', partnersID='bbearce@bu.edu', email='bbearce@bu.edu')
-    user3 = User(id=3, name='Test User 3', partnersID='test123', email='test@test.com')
+    user1 = User(id=1, name='Test_User_1', partnersID='bbearce', email='bbearce@gmail.com')
+    user2 = User(id=2, name='Test_User_2', partnersID='bbearce@bu.edu', email='bbearce@bu.edu')
+    user3 = User(id=3, name='Test_User_3', partnersID='test123', email='test@test.com')
     
     # Transportation
     post1 = Post(userId=user1.id, 
