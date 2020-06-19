@@ -102,8 +102,8 @@ def recreate_db():
                  lng=-71.1061639)
     
     post9 = Post(userId=user3.id, 
-                 post="(test) Happy to watch someone’s cat. If you have a vacation coming up or need to be away for a couple days, I would be willing to care for your little one.", 
-                 requestType='pet-care', 
+                 post="(test) Happy to watch someone's cat. If you have a vacation coming up or need to be away for a couple days.",
+                 requestType='pet-care',
                 #  helpType="needHelp", 
                  status='un-resolved',
                  date=dt.datetime(2020, 4, 1),
