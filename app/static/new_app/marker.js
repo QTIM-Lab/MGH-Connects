@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
           transportation: 'img/car.png',
           'neighborhood-connection': 'img/house.png',
           'family-connection': 'img/family.png',
-          'pet-care': 'img/pet.png',
+          // 'pet-care': 'img/pet.png',
           // canHelp: 'img/canHelp.png',
         },
         icons: [],
